@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="result">Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./images/dice1.png" />
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./images/dice2.png" />
+      </div>
+    </div>
+
+    <footer>www 🎲Antriksh 🎲 com</footer>
+    <script>
+      var num1=Math.floor(Math.random() * 6) + 1;//1-6
+      var num2=Math.floor(Math.random()*6) + 1;
+     
+      var randomDice = "images/dice" + num1 + ".png";
+
+      var imageSource="images/"+randomDice;
+
+      var image1=document.querySelectorAll("img")[0];
+
+      image1.setAttribute("src", randomDice);
+
+      var randomDice = "images/dice" + num2 + ".png";
+
+      var imageSource="images/"+randomDice;
+
+      var image1=document.querySelectorAll("img")[1];
+
+      image1.setAttribute("src", randomDice);
+
+      var result1=document.querySelector("h1");
+
+      if(num1>num2){
+         document.querySelector("h1").innerHTML="player 1 wins";
+      }
+      else if(num2>num1){
+         document.querySelector("h1").innerText="player 2 wins";
+      }
+      else{
+         document.querySelector("h1").innerText="draw";
+      }
+    
+
+
+      
+    </script>
+
+  </body>
+</html>
